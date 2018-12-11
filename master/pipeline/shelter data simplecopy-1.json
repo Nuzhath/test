@@ -1,0 +1,64 @@
+{
+	"name": "shelter data simplecopy-1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy Data1",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "BlobSource",
+						"recursive": true
+					},
+					"sink": {
+						"type": "BlobSink"
+					},
+					"enableStaging": false,
+					"dataIntegrationUnits": 0,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"First Name 1": "First Name",
+							"Last Name 1": "Last Name",
+							"Street": "Address",
+							"Cell Phone": "Phone",
+							"City": "City",
+							"State": "State",
+							"Zip": "Zip",
+							"Email": "Email",
+							"Date": "Adoption Date",
+							"Site": "Site",
+							"Animal Name": "Animal Name",
+							"Species": "Species",
+							"Birthdate": "Animal Date of Birth",
+							"Breed": "Primary Breed",
+							"Breed2": "Secondary Breed",
+							"Sex": "Sex",
+							"Spayed/Neutered": "Spayed/Neutered"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureBlobinput",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureBloboutput",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

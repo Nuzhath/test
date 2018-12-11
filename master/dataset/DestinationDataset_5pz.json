@@ -1,0 +1,15 @@
+{
+	"name": "DestinationDataset_5pz",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureStorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlob",
+		"typeProperties": {
+			"fileName": "",
+			"folderPath": "adftutorial/shelterdata/outputs"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

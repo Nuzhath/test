@@ -1,0 +1,84 @@
+{
+	"name": "event_trigger_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureStorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"copyfolder": {
+				"type": "String",
+				"defaultValue": "@pipeline().parameters.sourceFolder"
+			},
+			"copyfile": {
+				"type": "String",
+				"defaultValue": "@pipeline().parameters.sourceFile"
+			}
+		},
+		"type": "AzureBlob",
+		"structure": [
+			{
+				"name": "Name Last",
+				"type": "String"
+			},
+			{
+				"name": "Name First",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "Province Abbr",
+				"type": "String"
+			},
+			{
+				"name": "Postal Code",
+				"type": "String"
+			},
+			{
+				"name": "Address Combined",
+				"type": "String"
+			},
+			{
+				"name": "Phone Number",
+				"type": "String"
+			},
+			{
+				"name": "Email",
+				"type": "String"
+			},
+			{
+				"name": "Operation Date",
+				"type": "String"
+			},
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "Species",
+				"type": "String"
+			},
+			{
+				"name": "Date Of Birth",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "\\N",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": true
+			},
+			"fileName": "Baypath Humane Society Source File.csv",
+			"folderPath": "shelter-data-integration/Pet Point Shelters"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

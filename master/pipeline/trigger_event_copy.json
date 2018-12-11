@@ -1,0 +1,74 @@
+{
+	"name": "trigger_event_copy",
+	"properties": {
+		"activities": [
+			{
+				"name": "Petpoint_Shelter_Transform_copy_eventbased_trigger",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "BlobSource",
+						"recursive": true
+					},
+					"sink": {
+						"type": "BlobSink",
+						"copyBehavior": "MergeFiles"
+					},
+					"enableStaging": false,
+					"dataIntegrationUnits": 0,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"Name First": "First Name",
+							"Name Last": "Last Name",
+							"Address Combined": "Address1",
+							"City": "City",
+							"Province Abbr": "State",
+							"Postal Code": "Zip",
+							"Phone Number": "Phone",
+							"Email": "Email",
+							"Operation Date": "Adoption Date",
+							"Date Of Birth": "Animal Date of Birth",
+							"Name": "Animal Name",
+							"Species": "Species"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "event_trigger_source",
+						"type": "DatasetReference",
+						"parameters": {
+							"copyfolder": "@pipeline().parameters.sourceFolder",
+							"copyfile": "@pipeline().parameters.sourceFile"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Petpoint_shelter_target",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"sourceFolder": {
+				"type": "String",
+				"defaultValue": "@triggerBody().folderPath"
+			},
+			"sourceFile": {
+				"type": "String",
+				"defaultValue": "@triggerBody().fileName"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,94 @@
+{
+	"name": "AzureBlobinput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureStorageLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlob",
+		"structure": [
+			{
+				"name": "Date",
+				"type": "Date"
+			},
+			{
+				"name": "First Name 1",
+				"type": "String"
+			},
+			{
+				"name": "Last Name 1",
+				"type": "String"
+			},
+			{
+				"name": "Street",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Zip",
+				"type": "String"
+			},
+			{
+				"name": "Cell Phone",
+				"type": "String"
+			},
+			{
+				"name": "Email",
+				"type": "String"
+			},
+			{
+				"name": "Site",
+				"type": "String"
+			},
+			{
+				"name": "Animal Name",
+				"type": "String"
+			},
+			{
+				"name": "Species",
+				"type": "String"
+			},
+			{
+				"name": "Birthdate",
+				"type": "Date"
+			},
+			{
+				"name": "Breed",
+				"type": "String"
+			},
+			{
+				"name": "Breed2",
+				"type": "String"
+			},
+			{
+				"name": "Sex",
+				"type": "String"
+			},
+			{
+				"name": "Spayed/Neutered",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "\\N",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": true
+			},
+			"fileName": "ARF Source File.csv",
+			"folderPath": "shelter-data-integration/Csv Data"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

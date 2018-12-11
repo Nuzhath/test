@@ -1,0 +1,27 @@
+{
+	"name": "blob-creation",
+	"properties": {
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "trigger_event_copy",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"sourceFolder": "@triggerBody().folderPath",
+					"sourceFile": "@triggerBody().fileName"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/eventdemoblob/blobs/shelter-data-integration/Pet Point Shelters",
+			"blobPathEndsWith": ".csv",
+			"scope": "/subscriptions/83fe8bdc-3bea-4f01-ad3c-8508a4e47f7f/resourceGroups/credit/providers/Microsoft.Storage/storageAccounts/shelterdataintegration",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
