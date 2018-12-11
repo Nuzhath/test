@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "VcaDemoADFTutorialDataFactory"
+		},
+		"AzureDatabricks_linkedservice_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricksnew_linkedservice_accessToken": {
+			"value": ""
+		},
+		"AzureStorageLinkedService_connectionString": {
+			"value": ""
+		},
+		"AzureBlobinput_properties_typeProperties_fileName": {
+			"value": "ARF Source File.csv"
+		},
+		"AzureBlobinput_properties_typeProperties_folderPath": {
+			"value": "shelter-data-integration/Csv Data"
+		},
+		"AzureBloboutput_properties_typeProperties_fileName": {
+			"value": ""
+		},
+		"AzureBloboutput_properties_typeProperties_folderPath": {
+			"value": "shelter-data-integration/output"
+		},
+		"DestinationDataset_5pz_properties_typeProperties_fileName": {
+			"value": ""
+		},
+		"DestinationDataset_5pz_properties_typeProperties_folderPath": {
+			"value": "adftutorial/shelterdata/outputs"
+		},
+		"InputDataset_properties_typeProperties_fileName": {
+			"value": "emp.txt"
+		},
+		"InputDataset_properties_typeProperties_folderPath": {
+			"value": "adftutorial/input"
+		},
+		"OutputDataset_properties_typeProperties_fileName": {
+			"value": ""
+		},
+		"OutputDataset_properties_typeProperties_folderPath": {
+			"value": "adftutorial/output"
+		},
+		"Petpoint_shelter_target_properties_typeProperties_fileName": {
+			"value": "Target_file_format.csv"
+		},
+		"Petpoint_shelter_target_properties_typeProperties_folderPath": {
+			"value": "shelter-data-integration-output"
+		},
+		"event_trigger_source_properties_typeProperties_fileName": {
+			"value": "Baypath Humane Society Source File.csv"
+		},
+		"event_trigger_source_properties_typeProperties_folderPath": {
+			"value": "shelter-data-integration/Pet Point Shelters"
+		},
+		"petpoint_shelter_source_properties_typeProperties_fileName": {
+			"value": "Baypath Humane Society Source File.csv"
+		},
+		"petpoint_shelter_source_properties_typeProperties_folderPath": {
+			"value": "shelter-data-integration/Pet Point Shelters"
+		},
+		"sourcefiles_properties_typeProperties_fileName": {
+			"value": "ARF Source File.csv"
+		},
+		"sourcefiles_properties_typeProperties_folderPath": {
+			"value": "shelter-data-integration/Csv Data"
+		},
+		"targetfile_properties_typeProperties_fileName": {
+			"value": ""
+		},
+		"targetfile_properties_typeProperties_folderPath": {
+			"value": "shelter-data-integration-output"
+		},
+		"blob-creation_properties_trigger_event_copy_parameters_sourceFolder": {
+			"value": "@triggerBody().folderPath"
+		},
+		"blob-creation_properties_trigger_event_copy_parameters_sourceFile": {
+			"value": "@triggerBody().fileName"
+		},
+		"blob-creation_properties_typeProperties_scope": {
+			"value": "/subscriptions/83fe8bdc-3bea-4f01-ad3c-8508a4e47f7f/resourceGroups/credit/providers/Microsoft.Storage/storageAccounts/shelterdataintegration"
+		}
+	}
+}
