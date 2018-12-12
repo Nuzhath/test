@@ -1357,6 +1357,36 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/trigger_event_copy')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/scheduled-trigger-targetfile')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "Petpoint_shelter_File_copy",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 1,
+						"startTime": "2018-12-12T12:14:00.000Z",
+						"timeZone": "UTC"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/Petpoint_shelter_File_copy')]"
+			]
 		}
 	]
 }
