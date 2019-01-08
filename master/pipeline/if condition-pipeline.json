@@ -53,10 +53,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "If Condition2",
-				"type": "IfCondition"
 			}
 		]
 	},
