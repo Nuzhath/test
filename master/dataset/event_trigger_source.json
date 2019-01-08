@@ -76,8 +76,8 @@
 				"skipLineCount": 0,
 				"firstRowAsHeader": true
 			},
-			"fileName": "Baypath Humane Society Source File.csv",
-			"folderPath": "shelter-data-integration/Pet Point Shelters"
+			"fileName": "",
+			"folderPath": "shelter-data-integration"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
